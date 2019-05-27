@@ -1,0 +1,42 @@
+{
+  "name": "resume",
+  "version": "1.0.0",
+  "description": "My resume",
+  "scripts": {
+    "start": "gulp",
+    "build": "gulp build",
+    "prod": "gulp prod",
+    "webpack": "gulp webpack",
+    "sass": "gulp sass",
+    "pug": "gulp pug"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/amci1203/my-resume.git"
+  },
+  "keywords": [
+    "resume"
+  ],
+  "author": "Allen McIntosh II",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amci1203/my-resume/issues"
+  },
+  "homepage": "https://github.com/amci1203/my-resume#readme",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "acorn": "^6.0.6",
+    "babel-loader": "^8.0.5",
+    "browser-sync": "^2.26.5",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.2",
+    "inline-source-map": "^0.6.2",
+    "moment": "^2.24.0",
+    "re-require-module": "^1.0.2",
+    "waypoints": "^4.0.1",
+    "webpack": "^4.29.0"
+  }
+}

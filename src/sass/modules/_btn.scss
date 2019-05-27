@@ -1,0 +1,47 @@
+.btn {
+  @mixin hover ($text: null, $bg: null, $border: null) {
+    &:hover {
+      @if $text { color: $text !important }
+      @if $bg { background-color: $bg }
+      @if $border { border-color: $border }
+    }
+  }
+
+  @extend .no-text-decoration;
+
+  padding: 0.5rem 1.15rem;
+  margin: 1rem 0 0.625rem;
+  text-decoration: none !important;
+  border: 1px solid $brand-default;
+  border-radius: 0.25rem;
+  text-align: center;
+  line-height: 1.65;
+
+  @include hover(null, null, $lighter-gray);
+
+  i {
+    float: right;
+    line-height: 1.65;
+  }
+
+  &.wide {
+    display: block;
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  &.full-width {
+    display: block;
+    width: 100%;
+  }
+
+  &.primary {
+    background: $brand-primary;
+    color: white !important;
+  }
+  &.secondary {
+    background: $brand-secondary;
+    color: white !important;
+  }
+}

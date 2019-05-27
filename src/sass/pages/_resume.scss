@@ -1,0 +1,231 @@
+#resume {
+  position: relative;
+
+  .page-section {
+    @include media (below-lg) {
+      padding-top: 1rem;
+    }
+    @include media (below-md) {
+      padding-top: 0;
+    }
+  }
+
+  .row.info {
+    position: relative;
+    margin-bottom: 1.5rem;
+
+    .contacts {
+      margin-top: auto;
+
+      @include media (md) {
+        width: 300px;
+        float: right;
+      }
+
+      a {
+        @extend .no-text-decoration;
+        display: block;
+        margin-bottom: 0.5rem;
+        text-align: right;
+        
+        i { margin-left: 0.875rem }
+        &:hover { text-decoration: underline !important }
+      }
+
+      @include media (below-md) {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        margin-top: 1.75rem;
+
+        a {
+          margin: 0 0.5rem;
+
+          &:hover {
+            text-decoration: none !important;
+          }
+
+          span {
+            display: none;
+          }
+
+          i {
+            font-size: 2.25rem;
+          }
+        }
+      }
+    }
+
+    img {
+      display: block;
+      margin: 0 auto 1.25rem;
+      width: 100%;
+      max-width: 120px;
+      border-radius: 1.125rem;
+
+      @include media (md) { max-width: 180px }
+      @include media (lg) { max-width: 240px }
+    }
+
+    h1, h2 {
+      margin: 0;
+    }
+    h1 {
+      font-weight: 500;
+    }
+    h2 {
+      font-weight: 400;
+    }
+  }
+
+  .resume-block {
+    margin-bottom: 0.875rem;
+
+    p {
+      margin-bottom: 0;
+      font-weight: 600;
+      border-bottom: 1px dashed $light-gray;
+    }
+
+    .list {
+      margin-left: 1rem;
+      margin-top: 0.5rem;
+      padding-left: 0;
+
+      li {
+        position: relative;
+        list-style-type: none;
+        font-size: 1rem;
+        line-height: 1.325rem;;
+        &::before {
+          @extend .fas;
+          position: absolute;
+          left: -1rem;
+          top: 0;
+          content: fa-content($fa-var-chevron-right);
+          color: $darkest-gray;
+          font-size: 0.625em;
+          line-height: inherit;
+        }
+
+        @include media (md) {
+          strong {
+            display: inline-block;
+            width: 100px;
+          }
+        }
+      }
+
+      &.nested {
+        margin-top: 0;
+        margin-left: 20px;
+        li {
+          font-size: 0.875rem;
+        }
+      }
+    }
+  }
+
+  .print-button {
+    &.anchored {
+      position: absolute;
+    }
+
+    position: fixed;
+    z-index: 100;
+    bottom: 1rem;
+    right: 1rem;
+
+    color: white;
+    background-color: $darkest-gray;
+    background-image: linear-gradient(to top right, $black, $darker-gray);
+    box-shadow: 0 2px 2px rgba($black, 0.35);
+    border: 0;
+    border-radius: 999px;
+    font-size: 1.125rem;
+    height: 2.75rem;
+    width: 2.75rem;
+    cursor: pointer;
+
+    @include media (sm) {
+      font-size: 1.5rem;
+      height: 3.25rem;
+      width: 3.25rem;
+    }
+
+    @include media (md) {
+      height: 3.75rem;
+      width: 3.75rem;
+    }
+  }
+
+  @media print {
+    .print-button {
+      display: none;
+    }
+
+    .page-section {
+      padding: 0;
+    }
+
+    .contacts {
+      float: right;
+      max-width: 250px;
+
+      a {
+        font-size: 12px;
+      }
+    }
+  
+    .row.info {
+      margin-bottom: 0.5rem;
+    }
+    
+    .row.info > * {
+      width: 50%;
+    }
+
+    .resume-block {
+      p, .list, .list li {
+        font-size: 12px;
+      }
+
+      .list li strong {
+        width: 75px;
+      }
+    }
+
+    .resume-block.skills {
+      & > * {
+        width: 100%;
+      }
+
+      p, ul, li {
+        display: inline-block;
+      }
+
+      p {
+        width: 15%;
+        margin: 0.5rem 0 0;
+        vertical-align: top;
+        border-bottom: none;
+      }
+
+      ul {
+        width: 85%;
+        margin: 0.3125rem 0 0;
+        padding-left: 0.75rem;
+      }
+
+      li {
+        &::before { content: none }
+        &:nth-last-child(n+2)::after { content: ',\00a0' }
+      }
+    }
+
+    .resume-block.education .list li {
+      display: inline-block;
+      width: 45%;
+    }
+  }
+}

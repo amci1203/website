@@ -1,0 +1,45 @@
+extends _layouts/default
+
+block page
+  - activePage = 'about'
+
+append body
+  //- MODALS
+  include _modals/contact-form
+
+  main#homepage
+    .page-section
+      .wrapper: h1.title Who Am I?
+      .wrapper.medium: .generic-content
+        p.
+          My name is Allen McIntosh II, a JavaScript Developer. I'm from The Bahamas, I'm #{info.age} old, I like playing basketball
+          to stave off becoming a circle, and I also enjoy exercising my brain with the various #[strike headaches] problems that
+          programming provides&mdash;for those who don't already know, it's fun (we swear).
+        p.
+          Compared to other people I've seen who have been developing for years on end, some even from childhood (you lucky bastards),
+          I cannot say the same in the slightest. When I was first exposed to programming, I was already (legally) "a grown adult"&mdash;that
+          was back in university, circa 2014. It didn't take long after Computer Programming II (a bunch of slideshows and easy multiple choice
+          quizzes) to realize that #[em maybe] I chose poorly in how I would go about becoming the next 
+          #[a( href='https://en.wikipedia.org/wiki/Shigeru_Miyamoto' ) Shigeru Miyamoto], and I ended up leaving school shortly after that.
+        p.
+          It's now 2016 in this story, and I've officially started my journey as an autodidact; I fiddled with Ruby and the Rails framework for all of 2&ndash;3 months, 
+          but ultimately settled on JavaScript. Besides, it was the same language on the frontend and the backend, and was simple enough to
+          setup&mdash;in short, it's #[strike noob] newb friendly and it gets the job done 
+          #[a( href='https://www.youtube.com/watch?v=_Lb-A756On8' ) to this day] so I haven't had a real need beyond curiosity to switch things up.
+          There's still PLENTY to learn from this one community alone&mdash;even ignoring the fact that like Pokemon, there's much too many
+          packages out in the wild now for anybody to actually blame somebody for not knowing all of them, there's nonetheless many concepts, technologies, and
+          paradigms for me to wrap my head around.
+        p.
+          I live to improve, and I strive to be as proficient as I can be at what I choose to work with. It's a lot of work, but the constant
+          evolving is what made me want to become a programmer in the first place. I'll manage.
+      .row.center
+        .xs-10.sm-5.md-4.lg-3
+          a.btn.default.center-block.full-width( href='/portfolio.html' )
+            | Portfolio
+            i.fas.fa-desktop
+        .xs-10.sm-5.md-4.lg-3
+          a.btn.default.center-block.full-width( href='/resume.html' )
+            | Resume
+            i.far.fa-file-alt
+
+

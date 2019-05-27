@@ -1,0 +1,45 @@
+#portfolio-items {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 0.75rem;
+
+  @include media (md) {
+    gap: 1.25rem;
+  }
+
+  > article {
+    position: relative;
+    padding: 0.5rem 0.5rem 2.5rem;
+    border: 1px solid $lightest-gray;
+    border-radius: 3px;
+    box-shadow: 0 1px 3px rgba($black, 0.1);
+    margin: 0;
+    text-align: center;
+
+    img {
+      border: 1px solid $lightest-gray;
+    }
+
+    h2 {
+      font-size: 1.5rem;
+      font-weight: normal;
+    }
+
+    .buttons {
+      position: absolute;
+      bottom: 0.5rem;
+      left: 0;
+      right: 0;
+      padding-top: 0.5rem;
+      border-top: 1px solid $lightest-gray;
+
+      a {
+        color: inherit;
+        + a {
+          margin-left: 2rem;
+        }
+      }
+    }
+  }
+}

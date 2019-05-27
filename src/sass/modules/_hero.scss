@@ -1,0 +1,24 @@
+.hero {
+  background-color: lighten($brand-primary, 20);
+  color: #FEFEFE;
+
+  min-height: 60vh;
+  padding: 2.5rem 1rem;
+
+  .title {
+    margin-top: 3rem;
+    text-align: left;
+    font-weight: 300;
+    font-size: 2.1rem;
+  }
+
+  @include media (md) {
+    min-height: 480px;
+    padding: 4.5rem 1.5rem;
+
+    .title {
+      margin-top: 5rem;
+      font-size: 2.8rem;
+    }
+  }
+}

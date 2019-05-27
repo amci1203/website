@@ -1,0 +1,33 @@
+.nav--contacts {
+  @include media(below-md) { display: none }
+
+  background: $brand-primary;
+
+  width: 100%;
+  height: 50px;
+  padding-top: 1rem;
+  padding-bottom: 3px;
+  // border-bottom: 1px solid darken($brand-primary, 5);
+
+  align-items: center;
+  justify-content: flex-end;
+
+  ul {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  li, .list-item {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

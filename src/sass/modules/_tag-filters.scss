@@ -1,0 +1,44 @@
+.tagged-items {
+  .tags,
+  .items {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  .tags {
+    justify-content: center;
+    border-top: 1px solid #DDD;
+    border-bottom: 1px solid #DDD;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+
+    > span {
+      display: inline-block;
+      padding: 0.3125rem 0.75rem;
+      margin-right: 0.875rem;
+      cursor: pointer;
+      color: $dark-gray;
+      border-radius: 0.625rem;
+
+      &:hover {
+        background: $lightest-gray;
+      }
+      &.selected {
+        background: $gray;
+        color: $darker-gray;
+      }
+    }
+  }
+
+  .items {
+    transition: 300ms all ease;
+    transform-origin: center;
+    opacity: 1;
+
+    .unmatched {
+      transform: scale(0);
+      pointer-events: none;
+      opacity: 0;
+    }
+  }
+}

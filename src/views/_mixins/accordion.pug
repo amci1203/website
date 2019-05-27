@@ -1,0 +1,10 @@
+mixin accordion( id )
+  .accordion( id=id )
+    block
+
+mixin _panel( title, initActive = false )
+  - const cls = initActive ? 'active' : undefined
+  .panel
+    a( href='#' class=cls ) !{ title }
+    .content
+      block

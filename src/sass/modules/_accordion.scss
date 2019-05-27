@@ -1,0 +1,97 @@
+.accordion {
+  overflow: hidden;
+}
+
+.accordion > .panel {
+  $title-height: 2.5rem;
+
+  position: relative;
+  transition: all 0.3s;
+
+  & > a {
+    @extend .no-text-decoration;
+
+    position: relative;
+    display: block;
+    z-index: 15;
+    height: $title-height;
+    line-height: $title-height;
+    padding-left: 5px;
+    margin-bottom: 2px;
+    border-bottom: 1px solid $dark-gray;
+    transition: all .3s;
+    font-size: 1rem;
+    font-weight: 800;
+    cursor: pointer;
+
+    &::after {
+      @extend .fas;
+
+      position: absolute;
+      right: 0.5rem;
+      content: fa-content($fa-var-plus);
+      line-height: $title-height
+    }
+
+    &.active::after {
+      content: fa-content($fa-var-minus);
+    }
+
+    @media print {
+      height: $title-height / 1.5;
+      line-height: $title-height / 1.5;
+
+      &::after {display: none }
+    }
+  }
+
+  .show {
+    position: relative;
+    z-index: 15;
+  }
+
+  .content {
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
+    padding-bottom: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all .3s;
+    line-height: 1.35;
+
+    @include media (md) {
+      padding-left: 1.25rem;
+      padding-right: 1.25rem;
+    }
+
+    &.no-padding {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    ul {
+      @include media (below-md) {
+        padding: 0;
+        li { list-style-type: none }
+      }
+    }
+
+    .heading {
+      margin: 0;
+      font-weight: normal;
+      span { font-weight: 600 }
+    }
+
+    & > ul { margin-top: 3px }
+
+    @media print {
+      max-height: 1500px;
+      padding-bottom: 0.25rem !important;
+    }
+  }
+
+  & > a.active + .content {
+    max-height: 1500px;
+    padding-bottom: 1.25rem;
+  }
+}

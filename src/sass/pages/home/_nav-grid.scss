@@ -1,0 +1,126 @@
+.nav-grid {
+  display: grid;
+  gap: 1rem;
+  
+  @include media (sm) {
+    gap: 0.5rem;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 540px repeat(2, 300px);
+  }
+
+  @include media (md) {
+    gap: 2px;
+    grid-template-columns: 3fr 2fr 2fr;
+    grid-template-rows: repeat(2, 300px);
+  }
+
+  .item {
+    @extend .no-text-decoration;
+
+    background: rgba($black, 0.85);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    color: $white;
+    padding: 1rem 1.15rem;
+    text-align: center;
+
+    i {
+      font-size: 64px;
+
+      @include media (lg) {
+        font-size: 72px;
+      }
+    }
+
+    .btn-container {
+      padding: 0 2rem;
+
+      @include media (xs) {
+        padding-top: 2rem;
+      }
+    }
+
+    .btn-container > button {
+      @extend .no-text-decoration;
+
+      $color: $brand-secondary;
+      $hover-text: $darkest-gray;
+
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      border: 5px solid $color;
+      background: transparent;
+      font-weight: 700;
+      color: $color;
+
+      &:hover {
+        background: $color;
+        color: $hover-text;
+        border-color: $color;
+      }
+    }
+  }
+
+  .item:first-child {
+    @include media (sm) {
+      grid-column: 1 / span 2;
+    }
+    @include media (md) {
+      grid-column: 1;
+      grid-row: 1 / span 2;
+    }
+
+    dl {
+      width: 80%;
+      min-width: 280px;
+      max-width: 100%;
+      margin: 0 auto;
+      padding-top: 2rem;
+
+      dt {
+        width: 40%;
+        text-align: left;
+      }
+
+      dd {
+        width: 60%;
+        text-align: right;
+      }
+
+      dt, dd {
+        display: inline-block;
+        margin: 0;
+        line-height: 1.65;
+      }
+    }
+  }
+
+  @include media (sm) {
+    .btn-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      transition: 300ms ease;
+      overflow-y: hidden;
+      height: 72px;
+      margin: 0;
+
+      button {
+        transition: 200ms ease;
+        opacity: 0;
+        margin-bottom: -20px;
+        transform: scaleY(0.1);
+        transform-origin: bottom center;
+      }
+    }
+    
+    .item:hover .btn-container button {
+      opacity: 1;
+      margin-bottom: 0;
+      transform: scaleY(1);
+    }
+  }
+}

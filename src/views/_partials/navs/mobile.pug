@@ -1,0 +1,12 @@
+nav#mobile-nav.modal.filled.fade-anim
+  span( data-close )
+  h2.title.text MENU
+
+  .links: +page-links('wishlist')
+
+  .buttons
+    a( href=`mailto:${info.email}` ): i.far.fa-envelope
+    for site in Object.keys(info.social)
+      - const { link } = info.social[site]
+      - const icon = 'fa-' + site.toLowerCase() 
+      a( href=link ): i.fab( class=icon )

@@ -1,0 +1,79 @@
+.cards {
+
+  align-items: center;
+  justify-content: space-evenly;
+  align-content: center;
+
+  width: 100%;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+
+  &[class*="cards--in"] {
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  @mixin card-widths ($in-row) {
+    &.cards--in-#{$in-row}s > * {
+      @include media(below-md) {
+        width: 100%;
+      }
+      @include media(md) {
+        $total-width: 100% - ($in-row * 2);
+        width: $total-width / $in-row;
+      }
+    }
+  }
+  $i: 5;
+  @while $i > 1 {
+    @include card-widths($i)
+    $i: $i - 1;
+  }
+
+  & > * {
+    margin-bottom: 1rem !important;
+    padding: 1rem 1.35rem;
+    text-align: center;
+    list-style-type: none;
+    box-shadow: 0 2px 3px 1px rgba(black, 0.3);
+
+    @include media(below-md) {
+      margin-top: 1rem;
+      margin-bottom: 1.35rem !important;
+    }
+  }
+
+  &--align-left > * { text-align: left }
+
+  &--align-right > * { text-align: right }
+
+  &--rounded > * {
+    border-radius: 1.125rem;
+  }
+
+  &--primary > *, .card--primary {
+    $color: darken($brand-primary, 5);
+    background: $color;
+    color: white;
+    border: 1px solid darken($color, 8);
+  }
+
+  &--secondary > *, .card--secondary {
+    $color: lighten($brand-secondary, 5);
+    background: $color;
+    color: white;
+    border: 1px solid darken($color, 8);
+  }
+
+  &--white > *, .card--white {
+    background: white;
+    color: #212121;
+    border: 1px solid #EDEDED;
+  }
+
+  &--gray > *, .card--gray {
+    background: #343434;
+    color: #FFF;
+    border: 1px solid #212121;
+  }
+}

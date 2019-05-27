@@ -1,0 +1,27 @@
+extends _layouts/default
+
+prepend head
+  - const TITLE = "What's Next"
+
+append body
+  main#wishlist
+    .page-section
+      .wrapper: h1.title What I #[em *Think*] I Want To Learn Next
+      .wrapper.medium: .row
+        .md-8: .generic-content
+          p.
+            If you're anything like me, you find yourself going down the rabbit hole of "what should I try out/learn next" A LOT. 
+            And unfortunately, it happens so easily because it's never #[em just] "learn X". Nah, it's "learn X, but first, we need to cover Y &amp; Z". 
+            Or more commonly, in the middle of your journey, "to do X we must use Y"; sounds typical, except you have no freaking idea that Y was even a thing 
+            until 2-5 seconds ago. You can always choose to skim the deeper details to get the job done, but inevitably, you'll be #[strike forced] encouraged 
+            to better understand Y and Z, so you can fix something that went wrong with X&mdash;it's fun, honestly, in a masochist sorta way ¯\_(ツ)_/¯.
+          p.
+            Still, I thought it would be cool to create a list of things (in no particular order, mind you) that I wish to spend time with in the future. It'll give me a visible list that I could 
+            see so I may actually remmeber everything, and it can possibly give any fellow devs on their self-taught journey ideas on what to do next, so why not?
+          p.
+            Oh, and there will be links. Enjoy!
+        .md-4
+           figure
+            img( src='assets/img/alice-down-the-rabbit-hole.gif' )
+            figcaption.text-center: em My Weekend: A Visualization
+        .xs-9: hr

@@ -1,0 +1,28 @@
+footer: .wrapper.medium: .row.space-between
+
+  .sm-6.lg-4
+    h1.text-xs-center: a.no-text-decoration( href='/index.html' )
+      | Allen&nbsp;
+      span.text-light McIntosh II
+    address
+      h3
+        i.fas.fa-globe-americas
+        | #{info.address.city}, #{info.address.country}
+      p: a( href=`mailto:${info.email}` )
+        i.far.fa-envelope
+        | #{ info.email }
+      //- p: a( href=info.phone.link )
+        i.fas.fa-phone
+        | #{ info.phone.text }
+      for site in Object.keys(info.social)
+        - const { username, link } = info.social[site]
+        - const icon = 'fa-' + site.toLowerCase() 
+        p: a( href=link )
+          i.fab( class=icon )
+          | #{ site } (#{ username })
+
+  .sm-6.lg-4
+    +page-links('wishlist')
+
+  .xs-12
+    p.text-center.copyright-text &copy; #{current_year} Allen McIntosh II

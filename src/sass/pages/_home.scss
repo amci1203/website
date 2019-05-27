@@ -1,0 +1,7 @@
+#homepage {
+  // @import 'home/nav-grid';
+
+  .page-section a.btn {
+    @extend .no-text-decoration;
+  }
+}

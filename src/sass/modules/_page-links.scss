@@ -1,0 +1,65 @@
+.page-links {
+  $main-color: $brand-primary;
+  $accent: $beige;
+
+  position: relative;
+  z-index: 1;
+  background-color: $accent;
+  margin: 0 0 40px 0;
+  @include media(md) {
+    margin: 0 0 40px 20px;
+    width: 300px;
+    float: right;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: normal;
+    text-align: center;
+    padding: 20px 0;
+    background-color: $main-color;
+    color: #FFF;
+
+    a {
+      color: #FFF;
+      text-decoration: none;
+      background-color: $main-color;
+    }
+  }
+
+  .min-list{
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    border-top: 1px solid darken($accent, 14);
+    list-style-type: none;
+  }
+
+  li:first-child {
+    border-top: none;
+  }
+
+  &__active,
+  & .current-page-item {
+    text-align: center;
+    background-color: saturate(darken($accent, 11), 50);
+    color: $main-color;
+    font-weight: bold;
+  }
+
+  li a {
+    display: block;
+    text-align: center;
+    padding: 17px 10px;
+    text-decoration: none;
+    color: $main-color;
+    transition: all .3s;
+  }
+
+  li a:hover {
+    color: darken($main-color, 6);
+    background-color: saturate(darken($accent, 18), 65);
+  }
+}

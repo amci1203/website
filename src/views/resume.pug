@@ -1,0 +1,89 @@
+extends _layouts/default
+
+include _mixins/accordion
+include _mixins/resume
+
+block page
+  - activePage = 'resume'
+
+prepend head
+  - const TITLE = 'Resume'
+
+append body
+  #resume
+    button.print-button.hide-print( onclick='window.print()' ): i.fas.fa-print
+    .page-section.full-screen.white: .wrapper.medium
+      .row.info
+        .sm-12.md-6
+          h1.sm-only-center.show-lg.show-print #{ info.name }
+          h2.sm-only-center #{ info.title }
+        .sm-12.md-6: .contacts
+          a( href=`mailto:${info.email}` )
+            span #{ info.email }
+            | &nbsp;
+            i.far.fa-envelope
+
+          for site in Object.keys(info.social)
+            - const { username, link } = info.social[site]
+            - const icon = 'fa-' + site.toLowerCase() 
+            a( href=link )
+              span #{ site } (#{ username })
+              | &nbsp;
+              i.fab( class=icon )
+
+      +accordion('resume-sections')
+        +_panel('Skills', true)
+          .resume-block.skills.row
+            .sm-12.md-6
+              p Languages
+              +list(skills.languages)
+              p Databases
+              +list(skills.database)
+            .sm-12.md-6
+              p JS Libraries
+              +list(skills.libraries)
+              p Frameworks
+              +list(skills.frameworks)
+              p Tooling
+              +list(skills.tooling)
+
+        +_panel('Work Experience', true)
+          for w in work
+            .resume-block.experience
+              - const start = formatDate(w.start)
+              - const end   = w.end ? formatDate(w.end) : 'Present'
+              p
+                | !{ w.company }
+                span.show-md &nbsp;|&nbsp;
+                br.hide-md
+                | #{ start } - #{ end }
+              ul.list
+                li #[strong Position]: !{ w.position }
+                if w.stack
+                  li #[strong Stack]: !{ w.stack.join(', ') }
+                li
+                  span #[strong Description]
+                  +list(w.description, true)
+
+        +_panel('Education', true)
+          for s in education
+            .resume-block.education
+              - const start = formatDate(s.start)
+              - const end   = s.end ? formatDate(s.end) : 'Present'
+              p
+                | !{ s.school }
+                span.show-md &nbsp;|&nbsp;
+                br.hide-md
+                | #{ start } - #{ end }
+              ul.list
+                li
+                  strong Major
+                  | : !{ s.major }
+                li
+                  strong Completed
+                  | : !{ s.completed ? 'Yes' : 'No' }
+                li
+                  strong G.P.A
+                  | : !{ s.cumulative }
+
+        //- +_panel('Certifications')

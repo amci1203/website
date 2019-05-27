@@ -1,0 +1,34 @@
+@import "fa/fontawesome";
+@import "fa/regular";
+@import "fa/solid";
+@import "fa/brands";
+
+@import 'base/media';
+@import 'base/colors';
+// @import 'base/positions';
+@import 'base/display';
+@import 'base/navs';
+@import 'base/row';
+@import 'base/utilities';
+@import 'base/globals';
+
+@import 'containers/page-section';
+@import 'containers/generic-content';
+@import 'containers/wrapper';
+@import 'containers/modal';
+
+@import 'pages/home';
+@import 'pages/resume';
+@import 'pages/portfolio';
+
+@import 'navs/primary';
+@import 'navs/mobile';
+
+@import 'partials/footer';
+
+@import 'modules/btn';
+// @import 'modules/cards';
+// @import 'modules/gallery';
+@import 'modules/accordion';
+// @import 'modules/tag-filters';
+// @import 'modules/scroll-top-button';

@@ -1,0 +1,11 @@
+mixin page-links( ...ignore )
+  - const isActive = str => str == activePage ? 'active' : undefined
+  nav.links
+    unless ignore.includes('about')
+      a( class=isActive('about') href='/' ) About
+    unless ignore.includes('portfolio')
+      a( class=isActive('portfolio') href='/portfolio.html' ) Portfolio
+    unless ignore.includes('resume')
+      a( class=isActive('resume') href='/resume.html' ) Resume
+    unless ignore.includes('wishlist')
+      a( class=isActive('wishlist') href='/wishlist.html' ) Wishlist

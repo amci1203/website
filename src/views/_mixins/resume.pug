@@ -1,0 +1,5 @@
+mixin list( arr = [], nested = false )
+  - const cls = nested ? 'nested' : undefined
+  ul.list( class=cls )
+    for item in arr
+      li !{ item }
