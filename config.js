@@ -5,7 +5,7 @@ const { resolve } = require('path')
 const moment      = require('moment')
 
 const SRC  = './src'
-const DEST = './public'
+const DEST = './docs'
 const PUG_LOCALS = resolve(SRC, 'data.js')
 
 const path = (...p) => resolve(__dirname, ...p)
