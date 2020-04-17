@@ -5,6 +5,7 @@ module.exports = [
     start      : '2013-08-01',
     end        : '2015-05-01',
     completed  : false,
+    reason     : 'Financial Reasons',
     major      : 'Computer Science (BS)',
     cumulative : '3.1'
   }, {

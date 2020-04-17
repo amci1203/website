@@ -120,9 +120,14 @@
         margin-top: 0;
         margin-left: 20px;
         li {
-          font-size: 0.875rem;
+          font-size: 12px;
         }
       }
+    }
+
+    &.certificate span:last-child {
+      display: block;
+      font-weight: normal;
     }
   }
 
@@ -178,11 +183,16 @@
     }
   
     .row.info {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0;
     }
     
     .row.info > * {
       width: 50%;
+    }
+
+    #resume-sections {
+      position: relative;
+      top: -0.75rem;
     }
 
     .resume-block {
@@ -223,9 +233,17 @@
       }
     }
 
-    .resume-block.education .list li {
-      display: inline-block;
-      width: 45%;
+    .resume-block.education .list {
+      display: flex;
+      flex-direction: row;
+      
+      li {
+        width: 40%;
+      }
+
+      li:last-child {
+        width: auto;
+      }
     }
   }
 }

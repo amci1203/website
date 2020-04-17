@@ -8,6 +8,8 @@ $lighter-gray  : lighten(black, 75);
 $lightest-gray : lighten(black, 90);
 $white         : #FFFFFF;
 
+$aqua         : #10e2f5;
+$night-blue   : #070B29;
 $main-blue    : #15217F;
 $deep-blue    : #002A54;
 $deeper-blue  : #212132;
@@ -17,7 +19,7 @@ $sunny-yellow : #F7C600;
 $beige        : #FAF0CA;
 
 $brand-default   : $lightest-gray;
-$brand-primary   : $main-blue;
+$brand-primary   : $night-blue;
 $brand-secondary : $sunny-yellow;
 $brand-success   : rgb(92, 184, 92);
 $brand-info      : rgb(91, 192, 222);

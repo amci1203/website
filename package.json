@@ -26,13 +26,13 @@
   "devDependencies": {
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.3.1",
-    "acorn": "^6.0.6",
+    "acorn": "^6.4.1",
     "axios": "^0.19.0",
     "babel-loader": "^8.0.5",
-    "browser-sync": "^2.26.5",
+    "browser-sync": "^2.26.7",
     "del": "^3.0.0",
     "fstream": "^1.0.12",
-    "gulp": "^4.0.0",
+    "gulp": "^4.0.2",
     "gulp-pug": "^4.0.1",
     "gulp-sass": "^4.0.2",
     "inline-source-map": "^0.6.2",
@@ -40,5 +40,9 @@
     "re-require-module": "^1.0.2",
     "waypoints": "^4.0.1",
     "webpack": "^4.29.0"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
   }
 }

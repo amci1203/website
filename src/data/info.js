@@ -1,11 +1,11 @@
 const moment = require('moment')
 
 module.exports = {
-  employed: false,
+  employed: true,
 
   name  : 'Allen McIntosh II',
   age   : moment('1995-12-03').fromNow(true),
-  title : 'Web Developer',
+  title : 'Full Stack Engineer',
   email : 'allen.mcintoshii@gmail.com',
   phone : {
     text: '(242) 441-3229',

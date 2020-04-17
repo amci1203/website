@@ -5710,7 +5710,7 @@ readers do not read off random characters that represent icons */
 }
 
 .nav {
-  background: #15217F;
+  background: #070B29;
   color: white;
   padding: 0 1.15rem;
   display: flex;
@@ -6744,8 +6744,8 @@ body .links a.active {
 }
 
 .page-section.primary {
-  background: #15217F;
-  color: #FFF;
+  background: #070B29;
+  color: #FFFFFF;
 }
 
 .page-section.secondary {
@@ -7214,7 +7214,12 @@ body .links a.active {
 }
 
 #resume .resume-block .list.nested li {
-  font-size: 0.875rem;
+  font-size: 12px;
+}
+
+#resume .resume-block.certificate span:last-child {
+  display: block;
+  font-weight: normal;
 }
 
 #resume .print-button {
@@ -7268,10 +7273,14 @@ body .links a.active {
     font-size: 12px;
   }
   #resume .row.info {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0;
   }
   #resume .row.info > * {
     width: 50%;
+  }
+  #resume #resume-sections {
+    position: relative;
+    top: -0.75rem;
   }
   #resume .resume-block p, #resume .resume-block .list, #resume .resume-block .list li {
     font-size: 12px;
@@ -7302,9 +7311,15 @@ body .links a.active {
   #resume .resume-block.skills li:nth-last-child(n+2)::after {
     content: ',\00a0';
   }
+  #resume .resume-block.education .list {
+    display: flex;
+    flex-direction: row;
+  }
   #resume .resume-block.education .list li {
-    display: inline-block;
-    width: 45%;
+    width: 40%;
+  }
+  #resume .resume-block.education .list li:last-child {
+    width: auto;
   }
 }
 
@@ -7365,8 +7380,8 @@ body .links a.active {
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(255, 255, 255, 0.85);
-  color: #404040;
+  background: #000000;
+  color: #FFFFFF;
 }
 
 #primary-nav .mobile-menu-trigger {
@@ -7429,7 +7444,7 @@ body .links a.active {
     transform-origin: center;
     content: '\A0';
     position: absolute;
-    background: #404040;
+    background: #bfbfbf;
     height: 4px;
     bottom: -4px;
     left: 0;
@@ -7726,7 +7741,7 @@ footer .copyright-text {
 }
 
 .btn.primary {
-  background: #15217F;
+  background: #070B29;
   color: white !important;
 }
 
@@ -7756,6 +7771,7 @@ footer .copyright-text {
   transition: all .3s;
   font-size: 1rem;
   font-weight: 800;
+  page-break-after: avoid;
   cursor: pointer;
 }
 
@@ -7793,6 +7809,7 @@ footer .copyright-text {
   overflow: hidden;
   transition: all .3s;
   line-height: 1.35;
+  page-break-before: avoid;
 }
 
 @media screen and (min-width: 768px) {

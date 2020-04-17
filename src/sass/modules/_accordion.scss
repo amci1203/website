@@ -22,6 +22,8 @@
     transition: all .3s;
     font-size: 1rem;
     font-weight: 800;
+    page-break-after: avoid;
+
     cursor: pointer;
 
     &::after {
@@ -58,6 +60,7 @@
     overflow: hidden;
     transition: all .3s;
     line-height: 1.35;
+    page-break-before: avoid;
 
     @include media (md) {
       padding-left: 1.25rem;

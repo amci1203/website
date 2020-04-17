@@ -23,6 +23,11 @@ append body
             | &nbsp;
             i.far.fa-envelope
 
+          a( href=`${info.phone.link}` )
+            span #{ info.phone.text }
+            | &nbsp;
+            i.fas.fa-phone
+
           for site in Object.keys(info.social)
             - const { username, link } = info.social[site]
             - const icon = 'fa-' + site.toLowerCase() 
@@ -37,26 +42,21 @@ append body
             .sm-12.md-6
               p Languages
               +list(skills.languages)
+              p JS Frameworks
+              +list(skills.jsFrameworks)
+            .sm-12.md-6
               p Databases
               +list(skills.database)
-            .sm-12.md-6
-              p JS Libraries
-              +list(skills.libraries)
-              p Frameworks
-              +list(skills.frameworks)
-              p Tooling
-              +list(skills.tooling)
+              p Miscellaneous
+              +list(skills.misc)
 
         +_panel('Work Experience', true)
-          for w in work
+          for w in work.filter(w => !w.skip)
             .resume-block.experience
               - const start = formatDate(w.start)
               - const end   = w.end ? formatDate(w.end) : 'Present'
               p
-                | !{ w.company }
-                span.show-md &nbsp;|&nbsp;
-                br.hide-md
-                | #{ start } - #{ end }
+                | !{ w.company }&nbsp;|&nbsp;#{ start } - #{ end }
               ul.list
                 li #[strong Position]: !{ w.position }
                 if w.stack
@@ -71,19 +71,20 @@ append body
               - const start = formatDate(s.start)
               - const end   = s.end ? formatDate(s.end) : 'Present'
               p
-                | !{ s.school }
-                span.show-md &nbsp;|&nbsp;
-                br.hide-md
-                | #{ start } - #{ end }
+                | !{ s.school }&nbsp;|&nbsp;#{ start } - #{ end }
               ul.list
                 li
                   strong Major
                   | : !{ s.major }
                 li
                   strong Completed
-                  | : !{ s.completed ? 'Yes' : 'No' }
+                  | : !{ s.completed ? 'Yes' : `No (${s.reason})` }
                 li
                   strong G.P.A
                   | : !{ s.cumulative }
 
-        //- +_panel('Certifications')
+        +_panel('Certifications', true)
+          for c in certifications
+            .resume-block.certificate: p
+              | #{c.course}&nbsp;|&nbsp;#{c.type}
+              span Issued #{formatDate(c.issued)} by #{c.issuer}

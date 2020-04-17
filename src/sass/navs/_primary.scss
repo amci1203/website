@@ -1,11 +1,11 @@
 #primary-nav {
-  $bg            : $white;
-  $text          : $darker-gray;
+  $bg            : $black;
+  $text          : $white;
   $highlight     : $gray;
   $border        : $darkest-gray;
   $height        : 60px;
   $submenu-bg    : $darker-gray;
-  $link-hover    : $submenu-bg;
+  $link-hover    : $lighter-gray;
   $link-border-w : 4px;
   $submenu-text  : $white;
   
@@ -17,7 +17,7 @@
   left: 0;
   right: 0;
 
-  background: rgba($bg, 0.85);
+  background: $bg;
   color: $text;
 
   .mobile-menu-trigger {

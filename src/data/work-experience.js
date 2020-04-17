@@ -9,13 +9,18 @@ module.exports = [
       'JavaScript',
       'Pug',
       'Sass',
-      'jQuery'
+      'jQuery',
+      'Gulp',
+      'Webpack'
     ],
     description : [
-      'Collaborate with web team to maintain and develop www.softmoc.com',
-      'Provide feedback and suggestions to be considered for future developments'
+      'Use HTML, CSS, and JavaScript to provide site visitors with an intuitive ecommerce experience',
+      'Create build toolchains using Gulp & Webpack to facilitate regular homepage updates, flyers, and development of new pages',
+      'Provide feedback and suggestions to be considered for future developments, using Basecamp',
+      'Test new and existing features to maintain UI/UX quality',
     ]
   }, {
+    skip        : true,
     start       : '2017-12-15',
     end         : '2018-06-01',
     company     : 'Security Depot',

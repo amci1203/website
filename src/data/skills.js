@@ -3,26 +3,26 @@ module.exports = {
     'HTML',
     'CSS',
     'JavaScript',
+    'PHP',
     'SQL',
-    'Bash (Basics)'
-  ],
-  libraries: [
-    'jQuery (Avoid Use)',
-    'Vue/Vuex (Preferred)',
-    'React/Redux (Second Choice)',
+    'Bash'
   ],
   database: [
     'MongoDB (w/ Mongoose)',
     'MySQL'
   ],
-  frameworks: [
+  jsFrameworks: [
     'Express',
-    'Nuxt'
+    'jQuery',
+    'Vue/Vuex',
+    'React/Redux',
   ],
-  tooling: [
+  misc: [
+    'Operating Systems: Windows, MacOS, Linux/Unix',
+    'RESTful APIs (JSON)',
     'Gulp',
     'Git',
     'Browser Sync',
-    'Webpack (vue-cli is my lifesaver here)'
+    'Webpack'
   ]
 }

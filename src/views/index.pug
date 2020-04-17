@@ -8,8 +8,12 @@ append body
   include _modals/contact-form
 
   main#homepage
+    .page-section.primary: .wrapper.medium.flex.between
+      div
+        h1 Umm.....Hi.
+        h2.text-light: small Welcome
+      span.show-sm ISSA PLACEHOLDER
     .page-section
-      .wrapper: h1.title Who Am I?
       .wrapper.medium: .generic-content
         p.
           My name is Allen McIntosh II, a JavaScript Developer. I'm from The Bahamas, I'm #{info.age} old, I like playing basketball
@@ -31,7 +35,7 @@ append body
           paradigms for me to wrap my head around.
         p.
           I live to improve, and I strive to be as proficient as I can be at what I choose to work with. It's a lot of work, but the constant
-          evolving is what made me want to become a programmer in the first place. I'll manage.
+          evolving is what made me want to become a programmer in the first place&mdash;I'll manage.
       .row.center
         .xs-10.sm-5.md-4.lg-3
           a.btn.default.center-block.full-width( href='/portfolio.html' )
